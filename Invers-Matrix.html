@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Invers Matrix</title>
+  
+  <style>
+  
+  *{
+  
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  box-sizing: border-box;
+  border-collapse: collapse; 
+  
+  }
+  
+  table{
+  
+  width: 200px;
+  height: 200px;
+  
+  }
+  
+  td{
+  
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  
+  }
+  
+  input{
+  
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  
+  }
+  
+  button{
+  
+  padding: 10px 30px;
+  font-size: 25px;
+  background: black;
+  color: #fff;
+  
+  }
+  
+  #out{
+  
+  font-size: 25px;
+  
+  }
+  
+  </style>
+  
+</head>
+<body>
+
+  <table>
+  
+     <tr>
+     
+       <td>
+         <input id="a" type="number" placeholder="a11"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a12"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a13"/>
+       </td>
+     
+     </tr>
+     
+     <tr>
+     
+       <td>
+         <input id="a" type="number" placeholder="a21"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a22"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a23"/>
+       </td>
+     
+     </tr>
+     
+     <tr>
+     
+       <td>
+         <input id="a" type="number" placeholder="a31"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a32"/>
+       </td>
+       <td>
+         <input id="a" type="number" placeholder="a33"/>
+       </td>
+     
+     </tr>
+  
+  </table>
+  
+  <button id="btn">CONFIRM</button>
+  
+  <p id="out"></p>
+  
+  <script>
+  
+  let btn = document.querySelector("#btn");
+  let out = document.querySelector("#out");
+  
+  btn.onclick = function(){
+  
+  let a = document.querySelectorAll("#a");
+  
+  let a11,a12,a13,a21,a22,a23,a31,a32,a33,det;
+  
+  a11 = Number(a[0].value);
+  a12 = Number(a[1].value);
+  a13 = Number(a[2].value);
+  a21 = Number(a[3].value);
+  a22 = Number(a[4].value);
+  a23 = Number(a[5].value);
+  a31 = Number(a[6].value);
+  a32 = Number(a[7].value);
+  a33 = Number(a[8].value);
+  
+  det = (a11*((a22*a33)-(a23*a32))) - (a12*((a21*a33)-(a23*a31))) + (a13*((a21*a32)-(a22*a31)));
+  
+  out.innerHTML = `Determine of the matrix is <span style="color: red;font-weight: bold;">${det}</span>`;
+  
+  for(let i = 0;i <= 8;i++){
+  
+  a[i].value = "";
+  
+  }
+  
+  };
+  
+  </script>
+    
+</body>
+</html>
